@@ -20,20 +20,23 @@ Este script cria automaticamente a regra udev correta para seu teclado, recarreg
 ```bash
 git clone https://github.com/SEU_USUARIO/vial-udev-fix.git
 cd vial-udev-fix/scripts
-Dê permissão de execução ao script:
+```
 
-bash
-Copiar
-Editar
+2. Dê permissão de execução ao script:
+```bash
 chmod +x setup-vial-udev.sh
-Rode o script:
+```
+3. Rode o script:
+```bash
 ./setup-vial-udev.sh
+```
 ⚠️ Pode ser necessário digitar sua senha para sudo, pois o script adiciona regras no /etc/udev/rules.d.
 
-Desconecte e reconecte seu teclado. Abra o Vial GUI e veja se o dispositivo foi reconhecido.
+4. Desconecte e reconecte seu teclado. Abra o Vial GUI e veja se o dispositivo foi reconhecido.
 
 Script
 O script detecta automaticamente o VendorID e ProductID do teclado conectado e cria a regra udev correspondente:
+```bash
 #!/bin/bash
 # setup-vial-udev.sh
 # Script para adicionar regras udev para teclados compatíveis com Vial
@@ -62,6 +65,7 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 echo "🎉 Pronto! Desplugue e plugue seu teclado. Agora o Vial deve reconhecer corretamente."
+```
 
 Licença
 MIT License – livre para uso, cópia e modificação.
